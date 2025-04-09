@@ -13,7 +13,7 @@ export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  // Black and white color theme
+
   const theme = {
     light: {
       background: 'bg-white',
@@ -47,11 +47,11 @@ export default function SignIn() {
     }
   };
 
-  // Select current theme based on mode
+
   const currentTheme = darkMode ? theme.dark : theme.light;
 
   useEffect(() => {
-    // Apply dark mode to document body
+  
     if (darkMode) {
       document.body.classList.add('bg-[#1A1A1A]');
       document.body.classList.remove('bg-white');
@@ -85,7 +85,7 @@ export default function SignIn() {
         throw new Error(data.message || 'Failed to sign in');
       }
 
-      // Redirect to dashboard on success
+  
       window.location.href = '/dashboard';
     } catch (err) {
       setError(err.message);
@@ -94,7 +94,7 @@ export default function SignIn() {
     }
   };
 
-  // Animation variants
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -121,7 +121,7 @@ export default function SignIn() {
 
   return (
     <div className={`min-h-screen flex items-center justify-center ${currentTheme.background} transition-colors duration-300 p-6`}>
-      {/* Dark mode toggle */}
+  
       <div className="absolute top-4 right-4">
         <button
           onClick={toggleDarkMode}

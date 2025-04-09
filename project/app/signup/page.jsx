@@ -15,7 +15,7 @@ export default function SignUp() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  // Black and white color theme
+
   const theme = {
     light: {
       background: 'bg-white',
@@ -47,11 +47,11 @@ export default function SignUp() {
     }
   };
 
-  // Select current theme based on mode
+
   const currentTheme = darkMode ? theme.dark : theme.light;
 
   useEffect(() => {
-    // Apply dark mode to document body
+
     if (darkMode) {
       document.body.classList.add('bg-[#1A1A1A]');
       document.body.classList.remove('bg-white');
@@ -70,7 +70,6 @@ export default function SignUp() {
     setIsLoading(true);
     setError('');
 
-    // Validate password match
     if (password !== confirmPassword) {
       setError('Passwords do not match');
       setIsLoading(false);
@@ -92,7 +91,7 @@ export default function SignUp() {
         throw new Error(data.message || 'Failed to create account');
       }
 
-      // Redirect to login page on success
+   
       window.location.href = '/signin?success=account-created';
     } catch (err) {
       setError(err.message);
@@ -101,7 +100,6 @@ export default function SignUp() {
     }
   };
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -128,7 +126,7 @@ export default function SignUp() {
 
   return (
     <div className={`min-h-screen flex items-center justify-center ${currentTheme.background} transition-colors duration-300 p-6`}>
-      {/* Dark mode toggle */}
+     
       <div className="absolute top-4 right-4">
         <button
           onClick={toggleDarkMode}

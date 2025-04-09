@@ -21,13 +21,13 @@ export default function DashboardPage() {
     image: '',
   });
 
-  // Black and white color theme with white cards in dark mode
+  
   const theme = {
     light: {
       background: 'bg-[#FFFFFF]',
       card: 'bg-white',
       cardBorder: 'border-[#E5E5E5]',
-      primary: 'bg-[#333333]', // Black instead of purple
+      primary: 'bg-[#333333]', 
       primaryHover: 'hover:bg-[#000000]',
       text: 'text-[#333333]',
       textSecondary: 'text-[#6C757D]',
@@ -40,12 +40,12 @@ export default function DashboardPage() {
     },
     dark: {
       background: 'bg-[#1A1A1A]',
-      card: 'bg-white', // White cards in dark mode
+      card: 'bg-white', 
       cardBorder: 'border-[#E5E5E5]',
-      primary: 'bg-[#333333]', // Keep black buttons
+      primary: 'bg-[#333333]', 
       primaryHover: 'hover:bg-[#000000]',
-      text: 'text-[#333333]', // Dark text for white cards
-      textSecondary: 'text-[#6C757D]', // Same as light mode for consistency
+      text: 'text-[#333333]', 
+      textSecondary: 'text-[#6C757D]', 
       accent: 'text-[#333333]',
       button: 'bg-[#333333] hover:bg-[#000000] text-white',
       outlineButton: 'border-[#333333] text-[#333333] hover:bg-[#F0F0F0] hover:text-[#000000]',
@@ -55,11 +55,11 @@ export default function DashboardPage() {
     }
   };
 
-  // Select current theme based on mode
+ 
   const currentTheme = darkMode ? theme.dark : theme.light;
 
   useEffect(() => {
-    // Apply dark mode to document body
+  
     if (darkMode) {
       document.body.classList.add('bg-[#1A1A1A]', 'text-white');
       document.body.classList.remove('bg-white', 'text-[#333333]');
@@ -167,7 +167,7 @@ export default function DashboardPage() {
   return (
     <div className={`min-h-screen ${currentTheme.background} ${currentTheme.text} transition-colors duration-200`}>
       <div className="container mx-auto p-6">
-        {/* Top Header with Sign Out and Dark Mode Toggle */}
+       
         <div className="flex items-center justify-between mb-6">
           <h1 className={`text-4xl font-bold ${currentTheme.accent}`}>Dashboard</h1>
           <div className="flex space-x-3">
@@ -192,7 +192,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Dashboard Metrics */}
+     
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <Card className={`${currentTheme.card} ${currentTheme.cardBorder} shadow-md border rounded-lg overflow-hidden`}>
             <CardContent className="p-6">
@@ -225,7 +225,7 @@ export default function DashboardPage() {
           </Card>
         </div>
 
-        {/* Products Section */}
+    
         <div className="mt-8">
           <div className="flex items-center justify-between mb-4">
             <h2 className={`text-3xl font-bold tracking-tight ${currentTheme.text}`}>Products</h2>
@@ -248,7 +248,7 @@ export default function DashboardPage() {
             </Button>
           </div>
 
-          {/* Product Form */}
+        
           {showForm && (
             <Card className={`col-span-full ${currentTheme.card} ${currentTheme.cardBorder} mb-8 border rounded-lg overflow-hidden`}>
               <CardContent className="p-6">

@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 import { getUser } from '@/lib/auth';
 import { eq } from 'drizzle-orm';
 
-// GET: fetch products by logged-in user
+
 export async function GET() {
   const user = await getUser();
   if (!user) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
@@ -17,7 +17,7 @@ export async function GET() {
   return NextResponse.json(userProducts);
 }
 
-// DELETE: delete a product by ID (must belong to logged-in user)
+
 export async function DELETE(req) {
   try {
     const user = await getUser();
@@ -45,7 +45,7 @@ export async function DELETE(req) {
   }
 }
 
-// PATCH: update a product by ID (must belong to logged-in user)
+
 export async function PATCH(req) {
   try {
     const user = await getUser();

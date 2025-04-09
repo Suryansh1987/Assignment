@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 import { getUser } from '@/lib/auth';
 import { eq } from 'drizzle-orm';
 
-// CREATE Product
+
 export async function POST(req) {
   try {
     const user = await getUser();
@@ -49,7 +49,7 @@ export async function POST(req) {
   }
 }
 
-// GET All Products (not just user's)
+
 export async function GET() {
   try {
     const allProducts = await db.select().from(products);
@@ -63,7 +63,6 @@ export async function GET() {
   }
 }
 
-// DELETE Product
 export async function DELETE(req) {
   const { searchParams } = new URL(req.url);
   const id = searchParams.get('id');
@@ -84,7 +83,7 @@ export async function DELETE(req) {
   }
 }
 
-// UPDATE Product
+
 export async function PATCH(req) {
   try {
     const body = await req.json();
