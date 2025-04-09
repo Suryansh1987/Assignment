@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import { getUser } from '@/lib/auth';
 import dynamic from 'next/dynamic';
 
-const DashboardClient = dynamic(() => import('/components/DashboardClient'), { ssr: false });
+const DashboardClient = dynamic(() => import('/components/Dashboardclient'), { ssr: false });
 
 export default async function DashboardPage() {
   const user = await getUser();
